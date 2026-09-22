@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+             xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+
+    <persistence-unit name="FacturacionPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.tp.facturacion.model.Articulo</class>
+        <class>com.tp.facturacion.model.Cliente</class>
+        <class>com.tp.facturacion.model.CondicionIva</class>
+        <class>com.tp.facturacion.model.Contacto</class>
+        <class>com.tp.facturacion.model.Domicilio</class>
+        <class>com.tp.facturacion.model.FacturaVenta</class>
+        <class>com.tp.facturacion.model.FacturaVentaDetalle</class>
+        <class>com.tp.facturacion.model.ListaPrecio</class>
+        <class>com.tp.facturacion.model.ListaPrecioArticulo</class>
+        <class>com.tp.facturacion.model.Marca</class>
+        <class>com.tp.facturacion.model.PuntoVenta</class>
+        <class>com.tp.facturacion.model.Rubro</class>
+        <class>com.tp.facturacion.model.TipoMoneda</class>
+        <class>com.tp.facturacion.model.Usuario</class>
+
+        <properties>
+            <!-- Configuración de la conexión a MySQL -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/facturacion" />
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="grupo13" />
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+            <!-- Propiedades de Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+        </properties>
+    </persistence-unit>
+</persistence>
